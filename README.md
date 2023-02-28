@@ -5,10 +5,10 @@
 #### Prerequisites
 Make sure you have installed ___python3___ and ___virtualenv___
 #### Preparation for Linux
-``cd /rest_api_example_tests``
-``virtualenv venv``
-``source ./venv/bin/activate``
-``pip install -r requirements.txt``
+``cd /rest_api_example_tests``  
+``virtualenv venv``  
+``source ./venv/bin/activate``  
+``pip install -r requirements.txt``  
 #### How to run tests:
 ``pytest -v``
 ### Run with Docker:
@@ -21,7 +21,8 @@ Make sure you have installed ___Docker___ and ___Docker Compose___
 ### Run without Docker:
 #### Prerequisites
 Make sure you have installed ___npm___ and ___node.js___
-#### Preparation
+#### Preparation  
+``cd -/ui_autotests_lyko``  
 ``npm install``
 #### How to run tests:
 ``npx cypress run``
