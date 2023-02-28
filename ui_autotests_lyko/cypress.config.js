@@ -8,7 +8,7 @@ module.exports = defineConfig({
   },
   reporter: 'junit',
   reporterOptions: {
-    mochaFile: 'report/test-reports.xml',
+    mochaFile: 'reports/test-reports.xml',
     toConsole: true,
   },
 });

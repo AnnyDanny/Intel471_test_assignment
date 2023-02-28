@@ -43,8 +43,12 @@ def test_add_employee(headers, create_url, get_employee_url):
     # assert response_data["id"] == json_data["id"], "Id doesn't match"
 
 
-def test_update_employee(headers, create_url, get_employee_url, update_employee_url, update_employee_data, update_employee_id):
-    update_data = {'name': 'Jesper'}
+def test_update_employee(headers, create_url, get_employee_url, update_employee_url, update_employee_id):
+    update_data = {
+        'name': 'Jesper',
+        'salary': '321',
+        'age': '32',
+    }
 
     response_update = requests.put(f'{update_employee_url}/{update_employee_id}', headers=headers, json=update_data)
 
@@ -56,7 +60,6 @@ def test_update_employee(headers, create_url, get_employee_url, update_employee_
     json_response = response_update.json()
     assert json_response["status"] == "success"
     response_data = json_response["data"]
-    json_data = update_employee_data
     assert response_data["name"] == update_data["name"], "Name doesn't match"
-    assert response_data["salary"] == json_data["salary"], "Salary shouldn't be change"
-    assert response_data["age"] == json_data["age"], "Age shouldn't be change"
+    assert response_data["salary"] == update_data["salary"], "Salary shouldn't be change"
+    assert response_data["age"] == update_data["age"], "Age shouldn't be change"

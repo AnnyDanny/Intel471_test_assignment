@@ -44,7 +44,7 @@ def update_employee_data():
 
 
 @pytest.fixture
-def update_employee_id(update_employee_data, create_url):
+def update_employee_id(update_employee_data, create_url, headers):
     json_data = update_employee_data
     response = requests.post(create_url, headers=headers, json=json_data)
 
