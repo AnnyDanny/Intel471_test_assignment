@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  tests:
+    build:
+      context: .
+    volumes:
+      - ./:/rest_api_example_tests
+    command: >
+      sh -c "pytest -v -s --junitxml=reports/result.xml"
