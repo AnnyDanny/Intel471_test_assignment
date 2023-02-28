@@ -1,0 +1,9 @@
+version: '9.7'
+services:
+  cypress:
+    image: "cypress/included:12.3.0"
+    entrypoint: cypress
+    command: run
+    working_dir: /ui_autotests_lyko
+    volumes:
+      - ./:/ui_autotests_lyko
